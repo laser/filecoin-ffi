@@ -1183,6 +1183,11 @@ pub mod tests {
 
         unsafe {
             for st in seal_types {
+                pairs.push(("get_seal_verify_key_cid", fil_get_seal_params_path(st)));
+                pairs.push((
+                    "get_seal_verify_key_cid",
+                    fil_get_seal_verifying_key_path(st),
+                ));
                 pairs.push((
                     "get_seal_circuit_identifier",
                     fil_get_seal_circuit_identifier(st),
